@@ -1,9 +1,9 @@
 # Gari
 
 Gari is a web application that generates a map of roads in Bhutan highlighting areas with sharp turns and steep slopes.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [https://gari-phi.vercel.app/](https://gari-phi.vercel.app/) to view the application in your browser.
 
-The web app was developed using next js framework and mainly uses react, mapbox, openweather-api, and chakra ui. The data for the routes was collected from this [2016 Road Data](https://maps.princeton.edu/catalog/stanford-sn068jx1590) and the logic to find curves was derived from this [repo](https://github.com/MaikeruDev/RiskyRoads). The news articles for accidents was webscraped from [BBS](http://www.bbs.bt/news/) using BeautifulSoup, spacy and pandas. The accident data provided the idea of how highly frequent was the accodent cases of cars veering off road. The slopes was identified using the Google Earth Engine Python API, where a buffer was created around the roads, and in clusters of this region, the mean slope of the area was calculated. If the slope was greater than 25 degress, the area was flagged as a risky area for landslide.
+The web app was developed using next js framework and mainly uses react, mapbox, openweather-api, and chakra ui. The data for the routes was collected from this [2016 Road Data](https://maps.princeton.edu/catalog/stanford-sn068jx1590) and the logic to find curves was derived from this [repo](https://github.com/MaikeruDev/RiskyRoads). The news articles for accidents was webscraped from [BBS](http://www.bbs.bt/news/) using BeautifulSoup, spacy and pandas. The accident data provided the idea of how frequent accidents happen by cars veering off road but the causes were always uncertain. The slopes was identified using the Google Earth Engine Python API, where a buffer was created around the roads, and in clusters of this region, the mean slope of the area was calculated. If the slope was greater than 25 degress, the area was flagged as a risky area for landslide.
 
 ![Map of Bhutan based on its slope](gari/public/slope.png)
 
