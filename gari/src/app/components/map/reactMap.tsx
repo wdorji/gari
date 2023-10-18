@@ -4,8 +4,8 @@ import * as React from "react";
 import mapboxgl from "mapbox-gl";
 import { FeatureCollection } from "geojson";
 import "mapbox-gl/dist/mapbox-gl.css";
-import curves from "/Users/wangdrakdorji/Desktop/heruka/gari/gari/public/bt_curves.json";
-import slopes from "/Users/wangdrakdorji/Desktop/heruka/gari/gari/public/bt_slopes.json";
+import curves from "../../../../public/bt_curves.json";
+import slopes from "../../../../public/bt_slopes.json";
 import OpenWeatherAPI from "openweather-api-node";
 
 const OPEN_WEATHER_API_KEY = "d76c019b0abe496ddafd4972749b4177";
@@ -257,32 +257,32 @@ function MapboxMap() {
           },
         });
 
-        mapboxMap.addImage("pulsing-dot", pulsingDot, { pixelRatio: 2 });
+        //   mapboxMap.addImage("pulsing-dot", pulsingDot, { pixelRatio: 2 });
 
-        mapboxMap.addSource("dot-point", {
-          type: "geojson",
-          data: {
-            type: "FeatureCollection",
-            features: [
-              {
-                type: "Feature",
-                geometry: {
-                  type: "Point",
-                  coordinates: [curLong, curLat], // icon position [lng, lat]
-                },
-              },
-            ],
-          } as FeatureCollection,
-        });
+        //   mapboxMap.addSource("dot-point", {
+        //     type: "geojson",
+        //     data: {
+        //       type: "FeatureCollection",
+        //       features: [
+        //         {
+        //           type: "Feature",
+        //           geometry: {
+        //             type: "Point",
+        //             coordinates: [curLong, curLat], // icon position [lng, lat]
+        //           },
+        //         },
+        //       ],
+        //     } as FeatureCollection,
+        //   });
 
-        mapboxMap.addLayer({
-          id: "layer-with-pulsing-dot",
-          type: "symbol",
-          source: "dot-point",
-          layout: {
-            "icon-image": "pulsing-dot",
-          },
-        });
+        //   mapboxMap.addLayer({
+        //     id: "layer-with-pulsing-dot",
+        //     type: "symbol",
+        //     source: "dot-point",
+        //     layout: {
+        //       "icon-image": "pulsing-dot",
+        //     },
+        //   });
       }
     );
 
@@ -291,7 +291,7 @@ function MapboxMap() {
     return () => {
       mapboxMap.remove();
     };
-  }, []);
+  }, [curLat, curLong]);
 
   function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
