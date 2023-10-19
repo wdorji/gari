@@ -8,7 +8,7 @@ export default function About() {
     imageUrl:
       "https://images.unsplash.com/photo-1566020587334-bd85998d544e?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=2833",
     content:
-      "Gari is a web application that generates a map of roads in Bhutan highlighting areas with sharp turns and steep slopes.",
+      "Gari generates a map of roads in Bhutan highlighting areas with sharp turns and steep slopes.",
     boxWidth: "900",
     boxHeight: "125",
   };

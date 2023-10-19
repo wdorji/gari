@@ -154,6 +154,8 @@ function MapboxMap() {
     // setInterval(updateUserStats, 10000);
 
     mapboxMap.on("style.load", () => {
+      if (typeof window === "undefined" || node === null) return;
+
       mapboxMap.addLayer({
         id: "route",
         type: "line",
@@ -220,6 +222,7 @@ function MapboxMap() {
             "text-anchor": "top",
           },
         });
+        setMap(mapboxMap);
       }
     );
 
@@ -262,33 +265,7 @@ function MapboxMap() {
             "text-anchor": "top",
           },
         });
-
-        //   mapboxMap.addImage("pulsing-dot", pulsingDot, { pixelRatio: 2 });
-
-        //   mapboxMap.addSource("dot-point", {
-        //     type: "geojson",
-        //     data: {
-        //       type: "FeatureCollection",
-        //       features: [
-        //         {
-        //           type: "Feature",
-        //           geometry: {
-        //             type: "Point",
-        //             coordinates: [curLong, curLat], // icon position [lng, lat]
-        //           },
-        //         },
-        //       ],
-        //     } as FeatureCollection,
-        //   });
-
-        //   mapboxMap.addLayer({
-        //     id: "layer-with-pulsing-dot",
-        //     type: "symbol",
-        //     source: "dot-point",
-        //     layout: {
-        //       "icon-image": "pulsing-dot",
-        //     },
-        //   });
+        setMap(mapboxMap);
       }
     );
 
